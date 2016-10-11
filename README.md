@@ -5,3 +5,7 @@ http://htmlpreview.github.io/?https://github.com/DreamColl/DGL_Tool/blob/master/
 
 version1.0
 完成基本功能，缺各校校徽
+
+未来可能实现的功能需求
+接入数据库，增加所有辩手的票数统计和评委统计
+增加辩手名字匹配（24个赛区*8学校*8人次=一个很大的数字，明年都不一定能完成） _(:з」∠)_
