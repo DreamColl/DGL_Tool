@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#initialize {
+    background: cornsilk;
+    /*display: inline-block;*/
+    width: 40%;
+}
+
+ul {
+    border-bottom: 1px solid #D2D6D9;
+    margin: 2%;
+
+}
+
+select {
+    margin-left: 1%;
+}
+
+p {
+    padding-top: 1%;
+}
+
+a {
+    font-size: smaller;
+}
+
+footer a {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+footer {
+    background: cyan;
+    border-top: 20px;
+}
+
+input[name=bestName] {
+    width: 16%
+}
+
+div#finish{
+    width: 500px;
+    height: auto;
+    background: red;
+}
+
+div#finish a{
+    color: white;
+    font-family: "Kaiti TC";
+}
