@@ -2,26 +2,26 @@
  * Created by xiongjiyuan on 2016/10/9.
  */
 //div#initialize 使用了¥作为未来的数据库重构标识
-$(function () {
+$(function() {
     //生成轮次//生成得分//生成学校
     $("select[name=area]").change(createTurn).change(createScore).change(createSchool);
 
-//生成轮次、对阵、分数、最佳辩手¥
+    //生成轮次、对阵、分数、最佳辩手¥
     function createTurn() {
         $("select[name=turn]").children().remove();
         var area = $("select[name=area]").val();
-        var turn = {'01': 16, '02': 8, '03': 8};
+        var turn = { '01': 16, '02': 8, '03': 8 };
         for (var i = 1; i < turn[area]; i++) {
             $("select[name=turn]").append("<option>第" + NumberToChinese(i) + "轮</option>");
         }
     }
 
-//数据库标记¥
+    //数据库标记¥
     function createSchool() {
         $("select[name=school]").children().remove();
         var area = $("select[name=area]").val();
-        var school_begin = {'01': '101', '02': '201', '03': '301'};
-        var school_end = {'01': '117', '02': '205', '03': '309'};
+        var school_begin = { '01': '101', '02': '201', '03': '301' };
+        var school_end = { '01': '117', '02': '205', '03': '309' };
         var school = {
             '101': "北京大学",
             '102': "北京工商大学",
@@ -40,9 +40,13 @@ $(function () {
             '115': "中国人民大学",
             '116': "中国农业大学",
             '201': "南开大学",
-            '202': "天津财经大学",
+            '202': "天津工业大学",
             '203': "天津理工大学",
-            '204': "河北工业大学"
+            '204': "天津师范大学",
+            '205': "天津城建大学",
+            '206': "中国民航大学",
+            '207': "天津师范大学津沽分校",
+            '208': "河北工业大学"
         };
 
         for (var i = school_begin[area]; i < school_end[area]; i++) {
@@ -55,7 +59,7 @@ $(function () {
         $('div#school').children().remove();
 
         var area = $("select[name=area]").val();
-        var turn = {'01': 16, '02': 8, '03': 8, '04': 5};
+        var turn = { '01': 16, '02': 8, '03': 8, '04': 5 };
         var times;
         if (turn[area] % 2 == 0) {
             times = turn[area] / 2;
@@ -83,66 +87,66 @@ $(function () {
             $("select[name=score_a9], select[name = score_b9]").append(" <option> " + j + " </option> ");
 
             //改前面积分后面跟着变动
-            $("select[name=score_a0]").change(function () {
+            $("select[name=score_a0]").change(function() {
                 $("select[name=score_b0]").val(9 - $("select[name=score_a0]").val());
             });
-            $("select[name=score_a1]").change(function () {
+            $("select[name=score_a1]").change(function() {
                 $("select[name=score_b1]").val(9 - $("select[name=score_a1]").val());
             });
-            $("select[name=score_a2]").change(function () {
+            $("select[name=score_a2]").change(function() {
                 $("select[name=score_b2]").val(9 - $("select[name=score_a2]").val());
             });
-            $("select[name=score_a3]").change(function () {
+            $("select[name=score_a3]").change(function() {
                 $("select[name=score_b3]").val(9 - $("select[name=score_a3]").val());
             });
-            $("select[name=score_a4]").change(function () {
+            $("select[name=score_a4]").change(function() {
                 $("select[name=score_b4]").val(9 - $("select[name=score_a4]").val());
             });
-            $("select[name=score_a5]").change(function () {
+            $("select[name=score_a5]").change(function() {
                 $("select[name=score_b5]").val(9 - $("select[name=score_a5]").val());
             });
-            $("select[name=score_a6]").change(function () {
+            $("select[name=score_a6]").change(function() {
                 $("select[name=score_b6]").val(9 - $("select[name=score_a6]").val());
             });
-            $("select[name=score_a7]").change(function () {
+            $("select[name=score_a7]").change(function() {
                 $("select[name=score_b7]").val(9 - $("select[name=score_a7]").val());
             });
-            $("select[name=score_a8]").change(function () {
+            $("select[name=score_a8]").change(function() {
                 $("select[name=score_b8]").val(9 - $("select[name=score_a8]").val());
             });
-            $("select[name=score_a9]").change(function () {
+            $("select[name=score_a9]").change(function() {
                 $("select[name=score_b9]").val(9 - $("select[name=score_a9]").val());
             });
 
             //改后面积分前面跟着变动
-            $("select[name=score_b0]").change(function () {
+            $("select[name=score_b0]").change(function() {
                 $("select[name=score_a0]").val(9 - $("select[name=score_b0]").val());
             });
-            $("select[name=score_b1]").change(function () {
+            $("select[name=score_b1]").change(function() {
                 $("select[name=score_a1]").val(9 - $("select[name=score_b1]").val());
             });
-            $("select[name=score_b2]").change(function () {
+            $("select[name=score_b2]").change(function() {
                 $("select[name=score_a2]").val(9 - $("select[name=score_b2]").val());
             });
-            $("select[name=score_b3]").change(function () {
+            $("select[name=score_b3]").change(function() {
                 $("select[name=score_a3]").val(9 - $("select[name=score_b3]").val());
             });
-            $("select[name=score_b4]").change(function () {
+            $("select[name=score_b4]").change(function() {
                 $("select[name=score_a4]").val(9 - $("select[name=score_b4]").val());
             });
-            $("select[name=score_b5]").change(function () {
+            $("select[name=score_b5]").change(function() {
                 $("select[name=score_a5]").val(9 - $("select[name=score_b5]").val());
             });
-            $("select[name=score_b6]").change(function () {
+            $("select[name=score_b6]").change(function() {
                 $("select[name=score_a6]").val(9 - $("select[name=score_b6]").val());
             });
-            $("select[name=score_b7]").change(function () {
+            $("select[name=score_b7]").change(function() {
                 $("select[name=score_a7]").val(9 - $("select[name=score_b7]").val());
             });
-            $("select[name=score_b8]").change(function () {
+            $("select[name=score_b8]").change(function() {
                 $("select[name=score_a8]").val(9 - $("select[name=score_b8]").val());
             });
-            $("select[name=score_b9]").change(function () {
+            $("select[name=score_b9]").change(function() {
                 $("select[name=score_a9]").val(9 - $("select[name=score_b9]").val());
             });
         }
@@ -150,22 +154,21 @@ $(function () {
         $("a#bestName").after("<select name='bestName'>");
         for (var i = 1; i < 5; i++) {
             $("select[name=bestName]").append("<option>正方" + NumberToChinese(i) + "辩");
-        }
-        ;
+        };
         for (var i = 1; i < 5; i++) {
             $("select[name=bestName]").append("<option>反方" + NumberToChinese(i) + "辩");
-        }
-        ;
+        };
     }
 
-//数字转汉字
+    //数字转汉字
     var chnNumChar = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
     var chnUnitChar = ["", "十", "百", "千"];
     var chnUnitSection = ["", "万", "亿", "万亿", "亿亿"];
 
     function SectionToChinese(section) {
 
-        var strIns = '', chnStr = '';
+        var strIns = '',
+            chnStr = '';
         var unitPos = 0;
         var zero = true;
         while (section > 0) {
@@ -190,7 +193,8 @@ $(function () {
     function NumberToChinese(num) {
 
         var unitPos = 0;
-        var strIns = '', chnStr = '';
+        var strIns = '',
+            chnStr = '';
         var needZero = false;
 
         if (num === 0) {
@@ -215,13 +219,14 @@ $(function () {
 
 });
 //div#finish
-$(function () {
+$(function() {
     var a = $("div#finish");
 
     a.append("<a>请选择");
 
     $("select[name=area],select[name=turn]").change(areaFinish);
-    $("select[name=school],select[name^=score],select[name=bestName],input[name=bestName]").live('change', areaFinish);
+    //$("select[name=school],select[name^=score],select[name=bestName],input[name=bestName]").live('change', areaFinish);
+    $(document).on('change', 'select[name=school],select[name^=score],select[name=bestName],input[name=bestName]', areaFinish);
 
     function areaFinish() {
         a.children().remove();
@@ -235,7 +240,7 @@ $(function () {
         a.append('<a id="turn">' + text_turn + '</a><br>');
 
         //修改背景色¥
-        var areaBackground = {"01": "blue", "02": "purple"};
+        var areaBackground = { "01": "blue", "02": "purple" };
         a.css("background", areaBackground[val_area]);
 
         //修改学校、积分、佳辩
@@ -247,7 +252,7 @@ $(function () {
             if (i % 2 == 0) {
                 for (var k = i; k < i + 2; k++) {
                     a.append('<a id="score">' + score[k].innerText + '</a>');
-                    if (k % 2 == 0)a.append('<a id="score">:</a>');
+                    if (k % 2 == 0) a.append('<a id="score">:</a>');
                 }
             }
             if (i % 2 != 0) {
