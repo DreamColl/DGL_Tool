@@ -3,6 +3,9 @@
 网页地址
 http://htmlpreview.github.io/?https://github.com/DreamColl/DGL_Tool/blob/master/Tool_score/Tool_score.html
 
+兼容性测试地址
+http://htmlpreview.github.io/?https://github.com/DreamColl/DGL_Tool/blob/master/Tool_score/DGL-Test/compatibile.html
+
 version1.0<br>
 完成基本功能，缺各校校徽<br>
 
