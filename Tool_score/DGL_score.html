@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="layout" content="main">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="DGLboard.js"></script>
+    <link rel="stylesheet" href="DGLboard.css">
+</head>
+
+<body>
+
+<div style="display: -webkit-box;">
+    <div id="initialize">
+        <div>
+            <p>赛区
+                <select name="area">
+                    <option value="00">请选择</option>
+                    <option value="01">北京</option>
+                    <option value="02">天津</option>
+                    <option value="03">西安</option>
+                    <option value="04">吉林</option>
+                </select>
+                <select name="year">
+                    <option selected="selected">2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                </select>
+            </p>
+        </div>
+        <!--js生成轮次、学校、比分,用键对值-->
+        <div>
+            <p>轮次
+                <select name="turn"></select>
+            </p>
+        </div>
+
+        <div id="school">
+            <ul>学校</ul>
+        </div>
+    </div>
+    <div id="finish">
+
+    </div>
+</div>
+<footer>
+    <div style="display: none;">
+        <a>作者:熊济源</a><a>联系方式:xjiyuan@163.com</a><a>Verson 1.0</a>
+        <a style="display: none;">这是一个完全没有数据库的网站，作者决定在掌握了数据库之后重写这个网站，
+            如果你有幸看到这个吐槽，欢迎和作者讨论如何重写。毕竟，重构才是程序员的浪漫</a>
+        <a>用来吐槽的工作日志</a>
+        <a>2016-10-11 基本功能完成，缺少图片。把半成品给凌岳看，他夸了我。我很开心_(:з」∠)_</a>
+        <a>2016-10-19 因为穷、没时间导致无法做一个服务端和客户端对接于是决定，把数据存在本地，然后教他们取出数据并发给我，我在客户端上手动更新。
+            _(:з」∠)_请叫我人工服务端，在Websql、IndexedDB两个本地存储工具中选一个.然而IE这个垃圾直到10才部分支持IndexedDB，根本不支持Websql。
+            附：兼容性网址 兼容性真的是一件值得报警的事情
+            Websql IE不兼容：http://caniuse.mojijs.com/Home/Html/item/key/sql-storage/index.html
+            IndexedDB Safari 10以下不兼容：http://caniuse.mojijs.com/Home/Html/item/key/indexeddb/index.html
+        </a>
+    </div>
+</footer>
+</body>
+</html>
