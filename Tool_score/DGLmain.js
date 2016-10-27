@@ -1,7 +1,8 @@
 /**
  * Created by xiongjiyuan on 2016/10/9.
  */
-
+var AREA = {'00': '请选择', '01': '北京', '02': '天津', '03': '西安', '04': '吉林'};
+var YEAR = {'2016': '2016', '2017': '2017', '2018': '2018', '2019': '2019'};
 var SCHOOL = {
     '101': "清华大学",
     '102': "天津大学",
@@ -40,12 +41,31 @@ var SCHOOL = {
 var turn = {"01": "16", "02": "8", "03": "8", "04": "5"};
 var school_begin = {'01': '101', '02': '201', '03': '301'};
 var school_end = {'01': '117', '02': '209', '03': '309'};
+var areaBackground = {"01": "blue", "02": "purple"};
 
 //div#initialize 使用了¥作为未来的数据库重构标识
 $(function () {
+    createArea();
     $("select[name=area]").change(createTurn).change(createScore).change(createSchool);
 
-    //生成地区、轮次、对阵、分数、最佳辩手¥
+    //生成赛区和赛季
+    function createArea() {
+        $("select[name=area]").children().remove();
+        for (var k = 0; k < Object.keys(AREA).length; k++) {
+            var i = Object.keys(AREA)[k];
+            $("select[name=area]").append('<option value=' + i + '>' + AREA[i] + '</option>');
+        }
+
+        $("select[name=year]").children().remove();
+        for (var k = 0; k < Object.keys(YEAR).length; k++) {
+            var i = Object.keys(YEAR)[k];
+            $("select[name=year]").append('<option value=' + i + '>' + YEAR[i] + '</option>');
+        }
+
+        $("option[value=2016]").attr("select", "selected");
+    }
+
+    //生成轮次
     function createTurn() {
         $("select[name=turn]").children().remove();
         var area = $("select[name=area]").val();
@@ -233,7 +253,7 @@ $(function () {
 //div#finish
 $(function () {
     var a = $("div#finish");
-    a.append("<a>请选择");
+    a.append("<a id='seleted'>请选择</a>");
 
     //$("select,input[name=bestName]").live('change', areaFinish);
     $(document).on('change', 'select,input[name=bestName]', areaFinish);
@@ -250,8 +270,7 @@ $(function () {
         var text_turn = $("select[name=turn]").find("option:selected").text();
         a.append('<a class="turn">' + text_turn + '</a><br>');
 
-        //修改背景色¥
-        var areaBackground = {"01": "blue", "02": "purple"};
+        //修改背景色
         a.css("background", areaBackground[val_area]);
 
         //修改学校、积分、佳辩
@@ -403,7 +422,10 @@ function putDB() {
 }
 
 //关于作者只能用ajax刷新，因为穷，没有服务端，不能像土豪一样从服务端调数据，然后模版渲染。
-
-function  ajaxAuthor() {
-    $("div#all-box").load('aboutAuthor.html');
+function ajaxAuthor() {
+    $("div#all-box").load('DGLauthor.html');
+}
+//积分榜同样只能ajax刷新，因为穷，没有服务端，不能像土豪一样从服务端调数据，然后模版渲染。
+function ajaxBorad() {
+    $("div#all-box").load('DGLboard.html');
 }
