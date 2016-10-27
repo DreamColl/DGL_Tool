@@ -423,9 +423,9 @@ function putDB() {
 
 //关于作者只能用ajax刷新，因为穷，没有服务端，不能像土豪一样从服务端调数据，然后模版渲染。
 function ajaxAuthor() {
-    $("div#all-box").load('./index/DGLauthor.html');
+    $("div#all-box").load('./DGLauthor.html');
 }
 //积分榜同样只能ajax刷新，因为穷，没有服务端，不能像土豪一样从服务端调数据，然后模版渲染。
 function ajaxBorad() {
-    $("div#all-box").load('./index/DGLboard.html');
+    $("div#all-box").load('./DGLboard.html');
 }
