@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#initialize {
+    background: cornsilk;
+    width: 50%;
+    min-width: 250px;
+    text-align: left
+}
+
+ul.school {
+    border-bottom: 1px solid #D2D6D9;
+    margin: 2%;
+}
+
+select {
+    margin-left: 1%;
+}
+
+p {
+    padding-top: 1%;
+}
+
+a {
+    font-size: smaller;
+}
+
+footer a {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+footer {
+    background: cyan;
+    border-top: 20px;
+}
+
+input[name=bestName] {
+    width: 16%
+}
+
+div#finish {
+    width: 50%;
+    background: red;
+    min-width: 250px;
+}
+
+div#finish a {
+    color: white;
+    font-family: "Kaiti TC";
+}
+
+ul.header {
+    float: left;
+    background-color: bisque;
+    width: 100%;
+}
+
+ul.header li {
+    float: left;
+    list-style-type: none;
+    background-color: bisque
+}
+
+ul.header li a {
+    padding: 0px 30px;
+    background-color: transparent;
+    text-decoration: none;
+    color: currentColor;
+    user-select: none;
+}
+
+ul.header li a:hover {
+    color: beige;
+}
+
+ul.header li :hover {
+    background-color: darkgray;
+}
+
+/*author.html*/
+.author {
+    font-family: monospace;
+}
+
+ul.author {
+    list-style-position: inside;
+    list-style-type: decimal-leading-zero;
+}
+
+p.author {
+
+}

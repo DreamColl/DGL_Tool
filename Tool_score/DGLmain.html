@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="layout" content="main">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="../jquery.min.js"></script>
+    <script src="DGLmain.js"></script>
+    <script src="DGLboard.js"></script>
+    <link rel="stylesheet" href="DGLmain.css">
+</head>
+
+<body>
+<div id="header">
+    <ul class="header">
+        <li><a id="main" class="header" href="DGLmain.html">主页</a></li>
+        <li><a id="score" href="#" class="header" onclick="ajaxBorad()">积分榜</a></li>
+        <li><a id="bianshou" class="header" href="#" hidden="hidden">辩手</a></li>
+        <li><a id="other" class="header" href="#" hidden="hidden">其它</a></li>
+        <li><a id="author" class="header" href="#" onclick="ajaxAuthor()">关于作者</a></li>
+    </ul>
+</div>
+<div style="background-color: cornsilk;text-align: center;">
+    <div id="all-box" style="display: -webkit-inline-box;">
+        <div id="initialize">
+            <div>
+                <a>赛区
+                    <select name="area">
+                        <!--<option value="00">请选择</option>-->
+                        <!--<option value="01">北京</option>-->
+                        <!--<option value="02">天津</option>-->
+                        <!--<option value="03">西安</option>-->
+                        <!--<option value="04">吉林</option>-->
+                    </select>
+                    赛季
+                    <select name="year">
+                        <!--<option selected="selected">2016</option>-->
+                        <!--<option>2017</option>-->
+                        <!--<option>2018</option>-->
+                    </select>
+                </a>
+            </div>
+            <!--js生成轮次、学校、比分,用键对值-->
+            <div>
+                <a>轮次
+                    <select name="turn"></select>
+                </a>
+            </div>
+
+            <div id="school">
+
+            </div>
+        </div>
+        <div id="finish">
+
+        </div>
+    </div>
+    <footer>
+        <div style="display: none;">
+            <a>作者:熊济源</a><a>联系方式:xiongjiyuan001@163.com</a><a>Verson 1.0</a>
+            <a style="display: none;">这是一个完全没有数据库的网站，作者决定在掌握了数据库之后重写这个网站，
+                如果你有幸看到这个吐槽，欢迎和作者讨论如何重写。毕竟，重构才是程序员的浪漫</a>
+            <a>用来吐槽的工作日志</a>
+            <a>2016-10-11 基本功能完成，缺少图片。把半成品给凌岳看，他夸了我。我很开心_(:з」∠)_</a>
+            <a>
+                2016-10-19 因为穷、没时间导致无法做一个服务端和客户端对接于是决定，把数据存在本地，然后教他们取出数据并发给我，我在客户端上手动更新。
+                _(:з」∠)_请叫我人工服务端，在Websql、IndexedDB两个本地存储工具中选一个.然而IE这个垃圾直到10才部分支持IndexedDB，根本不支持Websql。
+                附：兼容性网址 兼容性真的是一件值得报警的事情
+                Websql IE不兼容：http://caniuse.mojijs.com/Home/Html/item/key/sql-storage/index.html
+                IndexedDB Safari 10以下不兼容：http://caniuse.mojijs.com/Home/Html/item/key/indexeddb/index.html
+            </a>
+            <a>
+                2015-10-26 已经连续写了三天的网页代码了，熟悉了一些css，让界面变得不那么丑了。
+                下午把积分榜和indexedDB接入主页，version 1.1就可以使用了。
+                version 1.2应该会接入辩手录入功能，作为数据库的查询的主要练习手段。
+                之后就会直接把系统升到v2.0版本，迎来一次重大的升级，因为接入了后端和域名。
+                再后来啊，我就不知道还要干啥了。
+                2015-10-26 我之前引用的jquery库太不稳定了，默默地下载了一个放在本地里面
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

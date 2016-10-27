@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分榜</title>
+    <script src="../jquery.min.js"></script>
+    <script src="DGLboard.js"></script>
+    <style type="text/css">
+        div#board-show-school a {
+        }
+
+        div#board-show-score a {
+        }
+
+        #show-win a, #show-defeat a, #show-score a {
+            margin: 10px;
+        }
+
+        div#board-select,div#board-show-school {
+            text-align: center;
+            width: 600px;
+            border-bottom: 2px solid #d4dde4;
+            padding: 10px 0px;
+            background-color: antiquewhite;
+        }
+
+        label {
+            display: block;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="board">
+    <div id="board-select">
+        <a>
+            赛区<select name="area"></select>
+            赛季<select name="year"></select>
+        </a>
+    </div>
+    <div id="board-show">
+        <div id="board-show-school" style="display: -webkit-box; ">
+            <div id="show-shcool" style="margin: 0px 30px;text-align: left;"></div>
+            <div id="show-win" style="margin: 0px 30px;"></div>
+            <div id="show-defeat" style="margin: 0px 30px;"></div>
+            <div id="show-score" style="margin: 0px 30px;"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
