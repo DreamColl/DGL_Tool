@@ -1,7 +1,7 @@
 # DGL_Tool
 
 网页地址
-http://htmlpreview.github.io/?https://github.com/DreamColl/DGL_Tool/blob/master/Tool_score/DGLmain.html
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/DreamColl/DGL_Tool/test/Tool_score/html/DGLmain.html
 
 兼容性测试地址
 http://htmlpreview.github.io/?https://github.com/DreamColl/DGL_Tool/blob/master/Tool_score/DGL-Test/compatibile.html

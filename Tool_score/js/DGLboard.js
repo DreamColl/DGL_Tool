@@ -91,7 +91,7 @@ function board() {
 
     var trans = db.transaction(DB_STORE_NAME, 'readonly');
     var store = trans.objectStore(DB_STORE_NAME);
-    var req = store.getAll();
+    var req = store.getAll();// 只在chrome浏览器下支持
     var result;
     var arrBoard;
 
